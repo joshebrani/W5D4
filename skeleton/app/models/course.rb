@@ -15,4 +15,10 @@ class Course < ApplicationRecord
         primary_key: :id,
         foreign_key: :student_id,
         class_name: :User
+
+    has_many :enrolled_students,
+        through: :enrollments,
+        source: :enrolled_courses
+
+   
 end

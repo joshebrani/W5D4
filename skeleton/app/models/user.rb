@@ -15,9 +15,8 @@ class User < ApplicationRecord
         class_name: :Enrollment
 
     has_many :enrolled_courses,
-        primary_key: :id,
-        foreign_key: :student_id,
-        class_name: :Enrollment
+        through: :enrollments,
+        source: :course
 
     
 end
